@@ -1,3 +1,10 @@
+/*
+Static class to handle gamepad related info.
+This class must be invoked in one scene gameobject's Star/Awake via Init()
+also, UpdateInfo() should be included in gameobject's Update()
+
+TODO Pending: proper disconnect/reconnect of gamepad during session
+*/
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,61 +13,104 @@ using UnityEngine.InputSystem.Controls;
 
 public static class GamepadUtils
 {
-    const string    BUTTON =    "Button";
-    const string    STICK  =    "Stick" ;
-    public static Gamepad gamepad = Gamepad.current;
+    [SerializeField] 
+    const   int     GAMEPAD_MAX_BUTTONS_AXIS = 16       ;
+    const   string  BUTTON                   = "Button" ;
+    const   string  STICK                    = "Stick"  ;
 
-    public static ButtonControl[] _buttons = new ButtonControl[] {    
-                                    gamepad.buttonSouth,
-                                    gamepad.buttonWest,
-                                    gamepad.buttonEast,
-                                    gamepad.buttonNorth,
-                                    gamepad.dpad.up,
-                                    gamepad.dpad.down,
-                                    gamepad.dpad.left,
-                                    gamepad.dpad.right,
-                                    gamepad.selectButton,
-                                    gamepad.startButton,
-                                    gamepad.leftShoulder,
-                                    gamepad.leftStickButton,
-                                    gamepad.leftTrigger,
-                                    gamepad.rightShoulder,
-                                    gamepad.rightStickButton,
-                                    gamepad.rightTrigger
-                                };
-                                    
-    public static StickControl[]  _sticks = new StickControl[]  {   
-                                    gamepad.leftStick,
-                                    gamepad.rightStick
-                                };
-
-    [SerializeField]
-    public static readonly Dictionary<string, (string, ButtonControl, AxisControl)> actionBindings = new Dictionary<string, (string, ButtonControl, AxisControl)>{
-        //    action    |  axisType  |  physical button
-        {   "MainSelect", (  BUTTON , gamepad.buttonSouth   , null                  ) },
-        {    "AltSelect", (  BUTTON , gamepad.buttonEast    , null                  ) },
-        {           "Up", (  BUTTON , gamepad.dpad.up       , null                  ) },
-        {         "Down", (  BUTTON , gamepad.dpad.down     , null                  ) },
-        {        "Right", (  BUTTON , gamepad.dpad.right    , null                  ) },
-        {         "Left", (  BUTTON , gamepad.dpad.left     , null                  ) },
-        {   "Accelerate", (  BUTTON , gamepad.rightTrigger  , null                  ) },
-        {         "Look", (   STICK , null                  , gamepad.leftStick.x   ) },
-
-    };
-    public static string gamepads = string.Join("\n", Gamepad.all);
+    public  static  string          gamepads = string.Join("\n", Gamepad.all);
+    public  static  Gamepad         gamepad             ;
+    public  static  ButtonControl[] _buttons            ; //= new ButtonControl[GAMEPAD_MAX_BUTTONS_AXIS];                           
+    public  static  StickControl[]  _sticks             ;
     
+    public  static  Dictionary<string, (string, ButtonControl, AxisControl)> actionBindings;
+
+    public  static bool gamepadAvailable        = false ;
+            static bool gamepadAvailablePrev    = false ;
+
+    // Unity's standard Start(). Invoked once when scene is loaded
+    public static void Init()
+    {
+        CaptureActiveGamepad();
+        if (gamepadAvailable) InitGamepadData();
+    }
+
+    public static void UpdateInfo() {
+        if (!gamepadAvailable) CaptureActiveGamepad();
+        if (gamepadAvailable && !gamepadAvailablePrev) InitGamepadData();
+    }
+
+    // define which is the current gamepad
+    static void CaptureActiveGamepad(){
+        gamepad = Gamepad.current;
+        if (gamepad == null){
+            Debug.Log("Is there a gamepad connected?");
+            gamepadAvailable = false;
+        } else {
+            gamepadAvailable = true;
+        }
+    }
+
+    // define gamapad related data, regarding current gamepad
+    static void InitGamepadData(){
+        if (!gamepadAvailable) return;                                          // exit if no gamepad is detected
+
+        _buttons = new ButtonControl[]{                                         // define array of gamepad buttons
+                            gamepad.buttonSouth,
+                            gamepad.buttonWest,
+                            gamepad.buttonEast,
+                            gamepad.buttonNorth,
+                            gamepad.dpad.up,
+                            gamepad.dpad.down,
+                            gamepad.dpad.left,
+                            gamepad.dpad.right,
+                            gamepad.selectButton,
+                            gamepad.startButton,
+                            gamepad.leftShoulder,
+                            gamepad.leftStickButton,
+                            gamepad.leftTrigger,
+                            gamepad.rightShoulder,
+                            gamepad.rightStickButton,
+                            gamepad.rightTrigger
+                        };
+
+        _sticks = new StickControl[]  {                                         // define array of gamepad sticks
+                            gamepad.leftStick,
+                            gamepad.rightStick
+                        };
+
+        actionBindings = new Dictionary<string, (string, ButtonControl, AxisControl)>{  // bind functional actions to physical buttons/sticks (keymapping)
+                        //    action    |  axisType  |  physical button     | physical stick
+                        {   "MainSelect", (  BUTTON , gamepad.buttonSouth   , null                  ) },
+                        {    "AltSelect", (  BUTTON , gamepad.buttonEast    , null                  ) },
+                        {           "Up", (  BUTTON , gamepad.dpad.up       , null                  ) },
+                        {         "Down", (  BUTTON , gamepad.dpad.down     , null                  ) },
+                        {        "Right", (  BUTTON , gamepad.dpad.right    , null                  ) },
+                        {         "Left", (  BUTTON , gamepad.dpad.left     , null                  ) },
+                        {   "Accelerate", (  BUTTON , gamepad.rightTrigger  , null                  ) },
+                        {         "Look", (   STICK , null                  , gamepad.leftStick.x   ) },
+        };
+        gamepadAvailablePrev = true;
+    }
+
+
+    // return all the buttons that are currently pressed
     public static IEnumerable<ButtonControl> GamepadButtonsPressed(){
         return _buttons?.Where(button => button.isPressed);
     }
 
+    // return a string with the names of all buttons being pressed
     public static string GamepadButtonsPressedNames(){
         return string.Join("\n", GamepadButtonsPressed().Select(x => x.displayName));
     }
 
+    // return all sticks axis values
     public static IEnumerable<StickControl> GamepadSticks(){
         return _sticks.Select(axis => axis);
     }
 
+    // return the value os the button/stick for the action passed in
+    // takes in account action vs physical button binding map <actionBindings>
     public static float ButtonValue(string action){
         return (actionBindings[action].Item1 == BUTTON) 
                     ? actionBindings[action].Item2.IsPressed() ? 1f : 0f 
