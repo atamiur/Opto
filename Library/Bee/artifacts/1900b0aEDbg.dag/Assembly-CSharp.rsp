@@ -363,6 +363,9 @@
 "Assets/Scripts/GamepadUtils/GamePadTest.cs"
 "Assets/Scripts/GamepadUtils/GamepadTest2.cs"
 "Assets/Scripts/GamepadUtils/GamepadUtils.cs"
+"Assets/Scripts/Globals/Globals.cs"
+"Assets/Scripts/Utils/Cheats.cs"
+"Assets/Scripts/Utils/CurrentScene.cs"
 -langversion:9.0
 
 /deterministic

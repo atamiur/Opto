@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/GamepadTest.unity
+    path: 
     guid: f8eff2d0494e17e4488a936b94b0f0a2
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Scene 0.unity
+    guid: 9eff5c4eb4b43f141831e51ba267f123
+  - enabled: 1
+    path: Assets/Scenes/Scene 1.unity
+    guid: dacb346cce781294f80c3da2c90767c7
+  - enabled: 1
+    path: Assets/Scenes/Scene 2.unity
+    guid: d50a99fd307cbfb46907fd5caef8a5c0
+  - enabled: 1
+    path: Assets/Scenes/Scene 3.unity
+    guid: 5ec6afb7ce63e694982674c09260da80
   m_configObjects: {}

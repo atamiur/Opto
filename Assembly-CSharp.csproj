@@ -37,8 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadUtils.cs" />
-     <Compile Include="Assets\Scripts\GamepadUtils\GamePadTest.cs" />
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadTest2.cs" />
+     <Compile Include="Assets\Scripts\GamepadUtils\GamePadTest.cs" />
+     <Compile Include="Assets\Scripts\Globals\Globals.cs" />
+     <Compile Include="Assets\Scripts\Utils\Cheats.cs" />
+     <Compile Include="Assets\Scripts\Utils\CurrentScene.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
