@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class CurrentScene : MonoBehaviour
 {
     TMPro.TextMeshProUGUI txt;

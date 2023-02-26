@@ -3,6 +3,7 @@
     Describes global data (structs, types, variables, consts) to be used accorss the platform
 
     Inludes general purpose methods to be invoked anywhere in the code (utils) 
+    
 */
 
 using UnityEngine;
