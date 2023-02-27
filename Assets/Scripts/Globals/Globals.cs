@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 public static class Globals // : MonoBehaviour  // static -> doesn't derive from MonoBehaviour
 {
     // global data definition
-     static int currentScene = 0;
+    static int currentScene = 0;                                                // current scene's build index
 
     // methods --------
 
