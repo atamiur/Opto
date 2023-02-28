@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Splah.unity
+- path: Assets/Scenes/SelectAmbEye.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

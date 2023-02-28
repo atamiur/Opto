@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: Toca no ecran para continuar
     m_Metadata:
       m_Items: []
+  - m_Id: 35312982347776
+    m_Localized: Identifique o olho que necessita ajuda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37687675637760
+    m_Localized: Olho Esquerdo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37701797859328
+    m_Localized: Olho Direito
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

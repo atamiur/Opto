@@ -39,12 +39,13 @@
      <Compile Include="Assets\Scripts\Utils\CurrentScene.cs" />
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadUtils.cs" />
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadTest2.cs" />
+     <Compile Include="Assets\Scripts\Globals\Menu.cs" />
+     <Compile Include="Assets\Scripts\SelectAmbEye\SetAmblyopicEye.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Splash\SplashController.cs" />
      <Compile Include="Assets\Scripts\Utils\Cheats.cs" />
      <Compile Include="Assets\Scripts\Globals\Globals.cs" />
-     <Compile Include="Assets\Scripts\GamepadUtils\GamePadTest.cs" />
-     <Compile Include="Assets\Scripts\Globals\Menu.cs" />
      <Compile Include="Assets\Scripts\Local\LocalizationTexts.cs" />
-     <Compile Include="Assets\Scripts\Scenes\Splash\SplashController.cs" />
+     <Compile Include="Assets\Scripts\GamepadUtils\GamePadTest.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -715,6 +716,10 @@
       <Project>{a5f0d292-2789-9826-5128-928990c2f7d2}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.CacheServer.csproj">
+      <Project>{b36d5c1c-2d48-7c55-180a-573c41ca7635}</Project>
+      <Name>UnityEditor.CacheServer</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{94425e85-9391-c386-bc49-f809025f09a0}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
@@ -730,6 +735,14 @@
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{868f0638-de1c-fb5c-9b3e-73eaec58d74d}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Addressables.csproj">
+      <Project>{2024eebf-9efa-74f2-6428-33d598b1b3a5}</Project>
+      <Name>Unity.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Localization.csproj">
+      <Project>{ac9e2730-8c21-0a4f-918a-442b176d07c7}</Project>
+      <Name>Unity.Localization</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{e39ddb2d-6809-975e-d8ed-fe298cfee23b}</Project>
@@ -755,6 +768,10 @@
       <Project>{6d667e77-fbc5-0505-fa98-f36d19482042}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ResourceManager.csproj">
+      <Project>{1f2f61ec-fef8-367b-7d2b-972a3bcba3f5}</Project>
+      <Name>Unity.ResourceManager</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{6629f5b5-69b7-4010-b56c-32e59f02f01a}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
@@ -771,17 +788,21 @@
       <Project>{35cb15b8-dce4-705e-af70-a776b108c294}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Services.Core.csproj">
-      <Project>{2491523d-7625-7d40-db4b-27d772f26fa6}</Project>
-      <Name>Unity.Services.Core</Name>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{de1778ac-c7ec-8a55-b903-66db909b7dcc}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{89c34028-e668-8002-d779-48d3d8d6f14c}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
-      <Project>{de1778ac-c7ec-8a55-b903-66db909b7dcc}</Project>
-      <Name>Unity.EditorCoroutines.Editor</Name>
+    <ProjectReference Include="Unity.Services.Core.csproj">
+      <Project>{2491523d-7625-7d40-db4b-27d772f26fa6}</Project>
+      <Name>Unity.Services.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Localization.Editor.csproj">
+      <Project>{0f59dc99-43ce-673d-1d32-9f5df7120676}</Project>
+      <Name>Unity.Localization.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
       <Project>{035cca0d-f648-a0c9-94aa-c6bc716e6695}</Project>
@@ -799,22 +820,6 @@
       <Project>{bc5c628b-2f0b-1792-ddca-d8aeb3318461}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
-      <Project>{832132dd-faa7-e586-9e13-79408449907f}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.csproj">
-      <Project>{bb8914e0-f3e5-7186-9f74-6eece000b62f}</Project>
-      <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Addressables.csproj">
-      <Project>{2024eebf-9efa-74f2-6428-33d598b1b3a5}</Project>
-      <Name>Unity.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ResourceManager.csproj">
-      <Project>{1f2f61ec-fef8-367b-7d2b-972a3bcba3f5}</Project>
-      <Name>Unity.ResourceManager</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.ScriptableBuildPipeline.csproj">
       <Project>{c62fa339-8f47-b6e2-5830-0e6ecd6a8528}</Project>
       <Name>Unity.ScriptableBuildPipeline</Name>
@@ -823,21 +828,17 @@
       <Project>{57c74d86-a864-d7f4-ad33-0b930d0a25d1}</Project>
       <Name>Unity.Addressables.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Localization.Editor.csproj">
-      <Project>{0f59dc99-43ce-673d-1d32-9f5df7120676}</Project>
-      <Name>Unity.Localization.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.CacheServer.csproj">
-      <Project>{b36d5c1c-2d48-7c55-180a-573c41ca7635}</Project>
-      <Name>UnityEditor.CacheServer</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Localization.csproj">
-      <Project>{ac9e2730-8c21-0a4f-918a-442b176d07c7}</Project>
-      <Name>Unity.Localization</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.ScriptableBuildPipeline.Editor.csproj">
       <Project>{b5cffd50-7ff3-edd1-b3e1-2b3896f4ca37}</Project>
       <Name>Unity.ScriptableBuildPipeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
+      <Project>{832132dd-faa7-e586-9e13-79408449907f}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{bb8914e0-f3e5-7186-9f74-6eece000b62f}</Project>
+      <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

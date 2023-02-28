@@ -375,6 +375,7 @@
 "Assets/Scripts/Globals/Menu.cs"
 "Assets/Scripts/Local/LocalizationTexts.cs"
 "Assets/Scripts/Scenes/Splash/SplashController.cs"
+"Assets/Scripts/SelectAmbEye/SetAmblyopicEye.cs"
 "Assets/Scripts/Utils/Cheats.cs"
 "Assets/Scripts/Utils/CurrentScene.cs"
 -langversion:9.0

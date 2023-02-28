@@ -36,15 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\AssetPreviewBridge.cs" />
+     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\DrivenPropertyManagerInternalBridge.cs" />
+     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\PrefColorBridge.cs" />
      <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\UnityConnectBridge.cs" />
      <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\SearchBridge.cs" />
-     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\AssemblyInfo.cs" />
-     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\DrivenPropertyManagerInternalBridge.cs" />
      <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\EditorGUIUtilityBridge.cs" />
+     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\AssetPreviewBridge.cs" />
+     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\ScriptAttributeUtilityBridge.cs" />
      <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\EditorGUIBridge.cs" />
-     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\PrefColorBridge.cs" />
      <None Include="Library\PackageCache\com.unity.localization@1.3.2\Editor\InternalBridge\Unity.Localization.Editor.InternalBridge.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

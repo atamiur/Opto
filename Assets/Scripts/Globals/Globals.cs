@@ -12,7 +12,8 @@ using UnityEngine.SceneManagement;
 public static class Globals // : MonoBehaviour  // static -> doesn't derive from MonoBehaviour
 {
     // global data definition
-    static int currentScene = 0;                                                // current scene's build index
+    public static int currentScene = 0;                                         // current scene's build index
+    public static int amblyopicEye {get; internal set;} = 0;                    // 0 = Left | 1 = right
 
     // methods --------
 
@@ -29,5 +30,9 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
         int thisScene = SceneManager.GetActiveScene().buildIndex;               // get current scene build index
         currentScene = thisScene;                                               // overkill...
         SceneManager.LoadScene(thisScene);                                      // reload current scene
+    }
+
+    public static void SetAmblyopicEye(int eye){
+        amblyopicEye = eye;
     }
 }

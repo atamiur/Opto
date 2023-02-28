@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: Touch the screen to continue
     m_Metadata:
       m_Items: []
+  - m_Id: 35312982347776
+    m_Localized: Identify which eye needs help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37687675637760
+    m_Localized: Left Eye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37701797859328
+    m_Localized: Right Eye
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
