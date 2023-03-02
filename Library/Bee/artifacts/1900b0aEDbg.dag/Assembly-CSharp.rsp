@@ -378,6 +378,7 @@
 "Assets/Scripts/SelectAmbEye/SetAmblyopicEye.cs"
 "Assets/Scripts/Utils/Cheats.cs"
 "Assets/Scripts/Utils/CurrentScene.cs"
+"Assets/SetCullingMask.cs"
 -langversion:9.0
 
 /deterministic

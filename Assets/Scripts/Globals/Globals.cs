@@ -12,8 +12,20 @@ using UnityEngine.SceneManagement;
 public static class Globals // : MonoBehaviour  // static -> doesn't derive from MonoBehaviour
 {
     // global data definition
-    public static int currentScene = 0;                                         // current scene's build index
+    public static int currentScene                      = 0;                    // current scene's build index
     public static int amblyopicEye {get; internal set;} = 0;                    // 0 = Left | 1 = right
+
+    // enums 
+    public enum Side       { Left     , Right     }
+    public enum EyeStatus  { Dominant , Weaker    }
+
+    // Culling Masks
+    public const int CullingMaskDominantEyeLayerBit     = 10 ;                  // bitwize value of dominant eye's layer
+    public const int CullingMaskWeakerEyeLayerBit       = 11 ;                  // bitwize value of weaker   eye's layer
+    public const int CullingMaskDefaultLayerBit         =  0 ;                  // bitwize value of default  eye's layer
+
+    public const int CullingMaskDominantEye             =  (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskDominantEyeLayerBit)  ; // Dominant Eye's culling mask
+    public const int CullingMaskWeakerEye               =  (1 << CullingMaskDefaultLayerBit) | (1 << CullingMaskWeakerEyeLayerBit)    ; // Weaker Eye's culling mask
 
     // methods --------
 
@@ -34,5 +46,21 @@ public static class Globals // : MonoBehaviour  // static -> doesn't derive from
 
     public static void SetAmblyopicEye(int eye){
         amblyopicEye = eye;
+    }
+
+    public static int GetCullingMask(Side side, Side eye)
+    {
+        /* XOR
+        0 0 = 0  Weak
+        0 1 = 1  Dominante
+        1 0 = 1  Dominante
+        1 1 = 0  weak
+        */
+
+        if ( (int)side == 0 ^ (int)eye == 0){                                   
+            return CullingMaskDominantEye;                                      // 0 0  and 1 1 return weak eye
+        } else {
+            return CullingMaskWeakerEye;                                        // 0 1  and 1 0 return weak eye
+        }
     }
 }

@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Utils\CurrentScene.cs" />
+     <Compile Include="Assets\SetCullingMask.cs" />
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadUtils.cs" />
      <Compile Include="Assets\Scripts\GamepadUtils\GamepadTest2.cs" />
      <Compile Include="Assets\Scripts\Globals\Menu.cs" />

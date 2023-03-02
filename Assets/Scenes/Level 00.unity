@@ -123,6 +123,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &405263589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6539530786375578891, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+  m_PrefabInstance: {fileID: 6539530786280215985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &405263592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405263589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3341d6421c18fc84ebec4a7a3c2deb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraID: 1
+--- !u!1 &979571929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6539530787570309590, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+  m_PrefabInstance: {fileID: 6539530786280215985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &979571931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979571929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3341d6421c18fc84ebec4a7a3c2deb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraID: 0
+--- !u!1 &1285197690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6539530786062217428, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+  m_PrefabInstance: {fileID: 6539530786280215985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1285197692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285197690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19787cb5eee6764c84ec5b8ceb026eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CullingMaskDominantEyeLayerBit: 10
+  CullingMaskWeakerEyeLayerBit: 11
+  CullingMaskDefaultLayerBit: 1
+  CullingMaskDominantEye: 0
+  CullingMaskWeakerEye: 0
 --- !u!1001 &6539530786280215985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +235,18 @@ PrefabInstance:
     - target: {fileID: 6539530786062217431, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539530787570309595, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2049
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256517378884410838, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256517378884410838, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.22
       objectReference: {fileID: 0}
     - target: {fileID: 7256517378884410838, guid: a86d45350db0d964598264c9efe1ae87, type: 3}
       propertyPath: m_LocalRotation.w
